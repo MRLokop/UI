@@ -1,0 +1,30 @@
+@import "../data/colors";
+
+.spinner {
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 100px;
+  background: transparent;
+  border: .25em solid currentColor;
+  border-right-color: transparent;
+  animation: spinner-route 1s infinite linear;
+  margin: 0 calc(50% - 12px);
+
+
+}
+@include forColor {
+  .spinner-#{$currentColor} {
+    border: .25em solid var(--#{$currentColor}-color);
+    border-right-color: transparent;
+  }
+}
+@keyframes spinner-route {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

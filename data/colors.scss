@@ -1,0 +1,70 @@
+$colors: (
+  "accent",
+  "secondary",
+  "light",
+  "dark",
+  "info",
+  "warn",
+  "error",
+  "primary",
+  "red",
+  "pink",
+  "purple",
+  "deep-purple",
+  "indigo",
+  "blue",
+  "light-blue",
+  "cyan",
+  "teal",
+  "green",
+  "light-green",
+  "lime",
+  "yellow",
+  "amber",
+  "orange",
+  "deep-orange",
+  "brown",
+  "grey",
+  "blue-grey"
+);
+
+$currentColor: #error;
+@mixin forColor {
+  @each $color in $colors {
+    $currentColor: $color !global;
+    @content;
+  }
+}
+
+
+@include forColor {
+  .color-#{$currentColor} {
+    //border: .25em solid var(--#{$currentColor}-color);
+    //border-right-color: transparent;
+    color: var(--#{$currentColor}-color);
+  }
+
+  .border-#{$currentColor} {
+    border-color: var(--#{$currentColor}-color);
+  }
+  .border-top-#{$currentColor} {
+    border-top-color: var(--#{$currentColor}-color);
+  }
+  .border-left-#{$currentColor} {
+    border-left-color: var(--#{$currentColor}-color);
+  }
+  .border-right-#{$currentColor} {
+    border-right-color: var(--#{$currentColor}-color);
+  }
+  .border-bottom-#{$currentColor} {
+    border-bottom-color: var(--#{$currentColor}-color);
+  }
+  .border-y-#{$currentColor} {
+    border-bottom-color: var(--#{$currentColor}-color);
+    border-top-color: var(--#{$currentColor}-color);
+  }
+  .border-x-#{$currentColor} {
+    border-right-color: var(--#{$currentColor}-color);
+    border-left-color: var(--#{$currentColor}-color);
+  }
+}

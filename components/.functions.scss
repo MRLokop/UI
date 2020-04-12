@@ -1,0 +1,23 @@
+
+@mixin media-breakpoint($trigger) {
+  @if ($trigger == "sm") {
+    @media (max-width: 576px) {
+      @content
+    }
+  }
+  @if ($trigger == "md") {
+    @media (max-width: 768px) {
+      @content
+    }
+  }
+  @if ($trigger == "lg") {
+    @media (max-width: 992px) {
+      @content
+    }
+  }
+  @if ($trigger == "xl") {
+    @media (max-width: 1200px) {
+      @content
+    }
+  }
+}
