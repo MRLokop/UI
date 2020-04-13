@@ -1,6 +1,32 @@
+@import ".functions";
+
 .card {
+  &.fluid {
+    width: 100%;
+  }
+
+  &:not(.no-round) {
+    border-radius: var(--radius-card);
+  }
+
+  &:not(.no-margin) {
+    margin: 6px;
+  }
+
+  &:not(.no-padding) {
+    padding: 12px;
+  }
+
+  .card-header {
+  }
+
   background: var(--background-card);
-  margin: 6px;
-  padding: 12px;
-  border-radius: var(--radius-card);
+}
+
+@include media-breakpoint("sm") {
+  .card {
+    .card-header {
+      font-size: 14px;
+    }
+  }
 }

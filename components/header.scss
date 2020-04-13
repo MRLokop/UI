@@ -1,5 +1,8 @@
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   padding: 0 12px;
@@ -8,14 +11,40 @@
   flex-direction: row;
   align-items: center;
 
-  .header-title {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .15));
+
+  .header-item {
+    &:not(.header-title):not(.header-no-limits) {
+      width: 32px;
+      height: 32px;
+    }
+
+    &:hover {
+      background: var(--background-header-item-hover);
+    }
+
+    transition: background-color .25s;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend .cursor-pointer;
+  }
+
+  .header-left {
+    position: fixed;
+    top: 0;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    height: 48px;
+  }
+
+  .header-title {
     padding: 6px 12px;
     text-transform: uppercase;
-    transition: background-color .25s;
     font-weight: normal;
-    &:hover {
-      background: rgba(255, 255, 255, .2);
-    }
+
+    @extend .header-item;
   }
 }
