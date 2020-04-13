@@ -1,4 +1,5 @@
 $breakPoints: (
+        "xm": 250px,
         "sm": 576px,
         "md": 768px,
         "lg": 992px,
@@ -10,6 +11,7 @@ $breakPoints: (
 @mixin media-breakpoint($trigger) {
   @media (max-width: map_get($breakPoints, $trigger)) {
     @content
+
   }
 }
 
