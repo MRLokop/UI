@@ -13,3 +13,22 @@
   justify-content: center;
   align-items: center;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@include media-eachBreakPoint() {
+  .row.row-adaptive-#{$currentPoint} {
+    flex-direction: column;
+  }
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  margin-right: 0;
+}

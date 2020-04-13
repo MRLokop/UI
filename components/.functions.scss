@@ -1,32 +1,23 @@
+$breakPoints: (
+        "sm": 576px,
+        "md": 768px,
+        "lg": 992px,
+        "xl": 1200px,
+        "sx": 1360px,
+        "ss": 1550px
+);
 
 @mixin media-breakpoint($trigger) {
-  @if ($trigger == "sm") {
-    @media (max-width: 576px) {
-      @content
-    }
+  @media (max-width: map_get($breakPoints, $trigger)) {
+    @content
   }
-  @if ($trigger == "md") {
-    @media (max-width: 768px) {
-      @content
-    }
-  }
-  @if ($trigger == "lg") {
-    @media (max-width: 992px) {
-      @content
-    }
-  }
-  @if ($trigger == "xl") {
-    @media (max-width: 1200px) {
-      @content
-    }
-  }
-  @if ($trigger == "sx") {
-    @media (max-width: 1360px) {
-      @content
-    }
-  }
-  @if ($trigger == "ss") {
-    @media (max-width: 1550px) {
+}
+
+$currentPoint: ERROR;
+@mixin media-eachBreakPoint() {
+  @each $break, $width in $breakPoints {
+    $currentPoint: $break !global;
+    @include media-breakpoint($break) {
       @content
     }
   }
