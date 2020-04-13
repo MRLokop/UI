@@ -1,0 +1,20 @@
+button {
+  background: 0;
+  border: 0 solid transparent;
+  &, &:focus, &:hover {
+    outline: transparent;
+    outline: none;
+  }
+  transition: background-color .25s;
+  &:hover {
+    background: var(--background-header-button-hover);
+  }
+
+  &:focus {
+    background: var(--background-header-button-focus);
+  }
+
+  padding: 6px 16px;
+  margin: 4px;
+  border-radius: 10px;
+}
