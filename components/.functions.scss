@@ -20,4 +20,14 @@
       @content
     }
   }
+  @if ($trigger == "sx") {
+    @media (max-width: 1360px) {
+      @content
+    }
+  }
+  @if ($trigger == "ss") {
+    @media (max-width: 1550px) {
+      @content
+    }
+  }
 }
