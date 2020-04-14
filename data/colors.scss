@@ -1,6 +1,7 @@
 $colors: (
   "accent",
   "secondary",
+  "contrast",
   "light",
   "dark",
   "info",
@@ -39,32 +40,32 @@ $currentColor: #error;
 
 @include forColor {
   .color-#{$currentColor} {
-    //border: .25em solid var(--#{$currentColor}-color);
+    //border: .25em solid var(--color-#{$currentColor});
     //border-right-color: transparent;
-    color: var(--#{$currentColor}-color);
+    color: var(--color-#{$currentColor});
   }
 
   .border-#{$currentColor} {
-    border-color: var(--#{$currentColor}-color);
+    border-color: var(--color-#{$currentColor});
   }
   .border-top-#{$currentColor} {
-    border-top-color: var(--#{$currentColor}-color);
+    border-top-color: var(--color-#{$currentColor});
   }
   .border-left-#{$currentColor} {
-    border-left-color: var(--#{$currentColor}-color);
+    border-left-color: var(--color-#{$currentColor});
   }
   .border-right-#{$currentColor} {
-    border-right-color: var(--#{$currentColor}-color);
+    border-right-color: var(--color-#{$currentColor});
   }
   .border-bottom-#{$currentColor} {
-    border-bottom-color: var(--#{$currentColor}-color);
+    border-bottom-color: var(--color-#{$currentColor});
   }
   .border-y-#{$currentColor} {
-    border-bottom-color: var(--#{$currentColor}-color);
-    border-top-color: var(--#{$currentColor}-color);
+    border-bottom-color: var(--color-#{$currentColor});
+    border-top-color: var(--color-#{$currentColor});
   }
   .border-x-#{$currentColor} {
-    border-right-color: var(--#{$currentColor}-color);
-    border-left-color: var(--#{$currentColor}-color);
+    border-right-color: var(--color-#{$currentColor});
+    border-left-color: var(--color-#{$currentColor});
   }
 }

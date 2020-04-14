@@ -16,7 +16,7 @@
 }
 @include forColor {
   .spinner-#{$currentColor} {
-    border: .25em solid var(--#{$currentColor}-color);
+    border: .25em solid var(--color-#{$currentColor});
     border-right-color: transparent;
   }
 }
