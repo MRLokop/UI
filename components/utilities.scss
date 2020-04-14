@@ -50,3 +50,9 @@ code {
   background: var(--background-code);
   color: var(--color-text)
 }
+
+@include media-eachBreakPoint() {
+  .fluid-#{$currentPoint} {
+    width: 100%;
+  }
+}
