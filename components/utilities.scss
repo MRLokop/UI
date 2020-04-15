@@ -36,12 +36,14 @@
 .column {
   display: flex;
   flex-direction: column;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .hide-last > *:last-child {
   display: none;
+}
+
+.fluid {
+  width: 100%;
 }
 
 hr {
