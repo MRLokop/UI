@@ -15,12 +15,28 @@ $breakPoints: (
   }
 }
 
-$currentPoint: ERROR;
+$currentBreakPoint: ERROR;
 @mixin media-eachBreakPoint() {
   @each $break, $width in $breakPoints {
-    $currentPoint: $break !global;
+    $currentBreakPoint: $break !global;
     @include media-breakpoint($break) {
       @content
     }
+  }
+}
+
+$points: (
+        1: 6px,
+        2: 10px,
+        3: 16px,
+        4: 24px,
+        5: 32px,
+);
+
+$currentPoint: ERROR;
+@mixin eachPoints() {
+  @each $name, $width in $points {
+    $currentPoint: $name !global;
+    @content;
   }
 }

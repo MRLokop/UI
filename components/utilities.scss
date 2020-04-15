@@ -22,10 +22,10 @@
 }
 
 @include media-eachBreakPoint() {
-  .row.row-adaptive-#{$currentPoint} {
+  .row.row-adaptive-#{$currentBreakPoint} {
     flex-direction: column;
   }
-  .container.container-#{$currentPoint} {
+  .container.container-#{$currentBreakPoint} {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -39,20 +39,62 @@
   margin-left: 0;
   margin-right: 0;
 }
+
 .hide-last > *:last-child {
   display: none;
 }
+
 hr {
   border-top: 1px solid var(--background-hr);
   margin: 10px 0;
 }
+
 code {
   background: var(--background-code);
   color: var(--color-text)
 }
 
 @include media-eachBreakPoint() {
-  .fluid-#{$currentPoint} {
+  .fluid-#{$currentBreakPoint} {
     width: 100%;
+  }
+}
+@include eachPoints {
+  .cm-#{$currentPoint} {
+    & > * {
+      margin: map_get($points, $currentPoint);
+    }
+  }
+  .cmt-#{$currentPoint} {
+    & > * {
+      margin-top: map_get($points, $currentPoint);
+    }
+  }
+  .cml-#{$currentPoint} {
+    & > * {
+      margin-left: map_get($points, $currentPoint);
+    }
+  }
+  .cmr-#{$currentPoint} {
+    & > * {
+      margin-right: map_get($points, $currentPoint);
+    }
+  }
+  .cmr-#{$currentPoint} {
+    & > * {
+      margin-bottom: map_get($points, $currentPoint);
+    }
+  }
+  .cmx-#{$currentPoint} {
+    & > * {
+      margin-right: map_get($points, $currentPoint);
+      margin-left: map_get($points, $currentPoint);
+    }
+  }
+  .cmy-#{$currentPoint} {
+    & > * {
+      margin-bottom: map_get($points, $currentPoint);
+      margin-top: map_get($points, $currentPoint);
+    }
   }
 }
