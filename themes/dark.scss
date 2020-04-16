@@ -5,7 +5,7 @@ body[theme='dark'] {
 
   --background-body: #212121;
   --background-header: #424242;
-  --background-header-item-hover: rgba(255, 255, 255, .2);
+  --background-header-item-hover: rgba(255, 255, 255, .1);
   --background-header-button-hover: rgba(255, 255, 255, .1);
   --background-header-button-focus: rgba(255, 255, 255, .2);
   --background-card: #424242;
@@ -15,6 +15,7 @@ body[theme='dark'] {
 
   --spinner-background: var(--accent-color);
 
-  --shadow-huge: drop-shadow(0 2px 6px rgba(0, 0, 0, .25));
-  --shadow-light: drop-shadow(0 2px 6px rgba(0, 0, 0, .15));
+  --shadow-huge: drop-shadow(0 2px 6px rgba(0, 0, 0, .15));
+  --shadow-medium: drop-shadow(0 2px 6px rgba(0, 0, 0, .10));
+  --shadow-light: drop-shadow(0 2px 6px rgba(0, 0, 0, .05));
 }
